@@ -47,15 +47,15 @@ function confirmitem() {
     }
     else if (msg == '031') {
         document.getElementById('message').innerHTML = '[RED BULL] selected <p/> [Clear] and Enter <p/> [QUANTITY]'
-        console.log(window.value = 131)
+        console.log(window.value = 031)
     }
     else if (msg == '032') {
         document.getElementById('message').innerHTML = '[COFFEE] selected <p/> [Clear] and Enter <p/> [QUANTITY]'
-        console.log(window.value = 132)
+        console.log(window.value = 032)
     }
     else if (msg == '033') {
         document.getElementById('message').innerHTML = '[TEA] selected <p/> [Clear] and Enter <p/> [QUANTITY]'
-        console.log(window.value = 133)
+        console.log(window.value = 033)
     }
     else if (msg == '034') {
         document.getElementById('message').innerHTML = '[MILK] selected <p/> [Clear] and Enter <p/> [QUANTITY]'

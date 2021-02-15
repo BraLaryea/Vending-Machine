@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSVendor</title>
+    <script src="js/VendingMachine.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/VendingMachine.css">
+</head>
+
+<body>
+    <header>
+        <h1>FULLSTACK VENDING MACHINE</h1>
+    </header>
+    <div id="wrapper">
+        <div class="scroller">
+            <span>ITEM [CODE]</span>
+            <marquee behavior="scroll" direction"left">
+                WATER [011] ₵3.00 --- COKE [012] ₵4.00 --- FANTA [013] ₵4.00 --- SPRITE [014] ₵4.00 --- GRANOLA [021]
+                ₵2.00 --- CHIPS
+                [022] ₵2.00 ---
+                PRINGLES [023] ₵7.00 --- DORITOS [024] ₵6.00 ---
+                RED BULL [031] ₵4.00 --- COFFEE [032] ₵3.00 --- TEA [033] ₵3.00 --- MILK [034] ₵1.00
+            </marquee>
+        </div>
+        <div class="main">
+            <div class="products-display">
+                <div class="product">
+                    <img id="water" src="img/water.png">
+                    <br><span>WATER</span>
+                </div>
+                <div class="product">
+                    <img id="coke" src="img/coke.png">
+                    <br><span>COKE</span>
+                </div>
+                <div class="product">
+                    <img id="fanta" src="img/fanta.png">
+                    <br><span>FANTA</span>
+                </div>
+                <div class="product">
+                    <img id="sprite" src="img/sprite.png">
+                    <br><span>SPRITE</span>
+                </div>
+                <div class="product">
+                    <img id="granola" src="img/granola.png">
+                    <br><span>GRANOLA</span>
+                </div>
+                <div class="product">
+                    <img id="chips" src="img/chips.png">
+                    <br><span>CHIPS</span>
+                </div>
+                <div class="product">
+                    <img id="pringles" src="img/pringles.png">
+                    <br><span>PRINGLES</span>
+                </div>
+                <div class="product">
+                    <img id="doritos" src="img/doritos.png">
+                    <br><span>DORITOS</span>
+                </div>
+                <div class="product">
+                    <img id="bull" src="img/redbull.png">
+                    <br><span>RED BULL</span>
+                </div>
+                <div class="product">
+                    <img id="coffee" src="img/coffee.png">
+                    <br><span>COFFEE</span>
+                </div>
+                <div class="product">
+                    <img id="tea" src="img/tea.png">
+                    <br><span>TEA</span>
+                </div>
+                <div class="product">
+                    <img id="milk" src="img/milk.png">
+                    <br><span>MILK</span>
+                </div>
+            </div>
+            <div class="right">
+                <div class="screen">
+                    <span id="message">Welcome to FS Vendor
+                        <p />Clear and Enter
+                        <p /> Item Code
+                    </span>
+                </div>
+                <div class="keypad">
+                    <div class="keyline">
+                        <button id="btn1" value='1' onclick="intoscreen(this)">1</button>
+                        <button id="btn2" value="2" onclick="intoscreen(this)">2</button>
+                        <button id="btn3" value="3" onclick="intoscreen(this)">3</button>
+                    </div>
+                    <div class="keyline">
+                        <button id="btn4" value="4" onclick="intoscreen(this)">4</button>
+                        <button id="btn5" value="5" onclick="intoscreen(this)">5</button>
+                        <button id="btn6" value="6" onclick="intoscreen(this)">6</button>
+                    </div>
+                    <div class="keyline">
+                        <button id="btn7" value="7" onclick="intoscreen(this)">7</button>
+                        <button id="btn8" value="8" onclick="intoscreen(this)">8</button>
+                        <button id="btn9" value="9" onclick="intoscreen(this)">9</button>
+                    </div>
+                    <div class="keyline">
+                        <button onclick="outofscreen()"><img src="img/delete.png"></button>
+                        <button id="btn0" value="0" onclick="intoscreen(this)">0</button>
+                        <button id="clearbtn" onclick="clearscreen()">Clear</button>
+                    </div>
+                </div>
+                <div class="functionline">
+                    <button id="itembtn" onclick="confirmitem()">ITEM</button>
+                    <button id="quantitybtn" onclick="totalprice()">QUANTITY</button>
+                    <button value="" onclick="changecalc()">PAY</button>
+                </div>
+            </div>
+        </div>
+        <div id="takeout">
+
+        </div>
+    </div>
+</body>
+
+</html>

@@ -9,7 +9,6 @@ header {
     box-sizing: border-box;
     border: solid thin black;
     background-color: burlywood;
-
 }
 
 .scroller {
@@ -20,7 +19,6 @@ header {
     border: solid thin black;
     margin-bottom: 10px;
     background-color: wheat;
-
 }
 
 .main {

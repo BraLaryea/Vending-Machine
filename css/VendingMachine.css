@@ -99,7 +99,7 @@ button:hover {
 }
 
 .functionline {
-    margin-top: 15px;
+    margin-top: 5px;
     display: flex;
     justify-content: space-evenly;
 }
@@ -109,6 +109,17 @@ button:hover {
     text-align: center;
     border-radius: 20%;
     font-size: 12px;
+}
+
+.okline {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#okbtn {
+    text-align: center;
+    border-radius: 20%;
+    background-color: wheat;
 }
 
 #quantitybtn {

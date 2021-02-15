@@ -11,6 +11,21 @@ function clearscreen() {
     document.getElementById('message').innerHTML = ""
 }
 
+function item() {
+    clearscreen()
+    console.log(window.name = 1)
+}
+
+function quantity() {
+    clearscreen()
+    console.log(window.name = 2)
+}
+
+function pay() {
+    clearscreen()
+    console.log(window.name = 3)
+}
+
 function confirmitem() {
     var msg = document.getElementById('message').innerHTML
     if (msg == '011') {
@@ -135,8 +150,16 @@ function changecalc() {
     else if (window.value = Number(msg)) {
         document.getElementById('message').innerHTML = 'Thank you <br> For your purchase! <p/> 🎉🙏🏽'
     }
-
 }
 
-
-
+function functselector() {
+    if (window.name == 1) {
+        confirmitem()
+    }
+    else if (window.name == 2) {
+        totalprice()
+    }
+    else if (window.name == 3) {
+        changecalc()
+    }
+}

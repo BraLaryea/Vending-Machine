@@ -14,51 +14,51 @@ function clearscreen() {
 function confirmitem() {
     var msg = document.getElementById('message').innerHTML
     if (msg == '011') {
-        document.getElementById('message').innerHTML = '[WATER] selected <p/> [Clear] and Enter <p/> [QUANTITY]'
+        document.getElementById('message').innerHTML = '[WATER] selected <p/> [Clear] and Specify <p/> [QUANTITY]'
         console.log(window.value = 011)
     }
     else if (msg == '012') {
-        document.getElementById('message').innerHTML = '[COKE] selected <p/> [Clear] and Enter <p/> [QUANTITY]'
+        document.getElementById('message').innerHTML = '[COKE] selected <p/> [Clear] and Specify <p/> [QUANTITY]'
         console.log(window.value = 012)
     }
     else if (msg == '013') {
-        document.getElementById('message').innerHTML = '[FANTA] selected <p/> [Clear] and Enter <p/> [QUANTITY]'
+        document.getElementById('message').innerHTML = '[FANTA] selected <p/> [Clear] and Specify <p/> [QUANTITY]'
         console.log(window.value = 013)
     }
     else if (msg == '014') {
-        document.getElementById('message').innerHTML = '[SPRITE] selected <p/> [Clear] and Enter <p/> [QUANTITY]'
+        document.getElementById('message').innerHTML = '[SPRITE] selected <p/> [Clear] and Specify <p/> [QUANTITY]'
         console.log(window.value = 014)
     }
     else if (msg == '021') {
-        document.getElementById('message').innerHTML = '[GRANOLA] selected <p/> [Clear] and Enter <p/> [QUANTITY]'
+        document.getElementById('message').innerHTML = '[GRANOLA] selected <p/> [Clear] and Specify <p/> [QUANTITY]'
         console.log(window.value = 021)
     }
     else if (msg == '022') {
-        document.getElementById('message').innerHTML = '[CHIPS] selected <p/> [Clear] and Enter <p/> [QUANTITY]'
+        document.getElementById('message').innerHTML = '[CHIPS] selected <p/> [Clear] and Specify <p/> [QUANTITY]'
         console.log(window.value = 022)
     }
     else if (msg == '023') {
-        document.getElementById('message').innerHTML = '[PRINGLES] selected <p/> [Clear] and Enter <p/> [QUANTITY]'
+        document.getElementById('message').innerHTML = '[PRINGLES] selected <p/> [Clear] and Specify <p/> [QUANTITY]'
         console.log(window.value = 023)
     }
     else if (msg == '024') {
-        document.getElementById('message').innerHTML = '[DORITOS] selected <p/> [Clear] and Enter <p/> [QUANTITY]'
+        document.getElementById('message').innerHTML = '[DORITOS] selected <p/> [Clear] and Specify <p/> [QUANTITY]'
         console.log(window.value = 024)
     }
     else if (msg == '031') {
-        document.getElementById('message').innerHTML = '[RED BULL] selected <p/> [Clear] and Enter <p/> [QUANTITY]'
+        document.getElementById('message').innerHTML = '[RED BULL] selected <p/> [Clear] and Specify <p/> [QUANTITY]'
         console.log(window.value = 031)
     }
     else if (msg == '032') {
-        document.getElementById('message').innerHTML = '[COFFEE] selected <p/> [Clear] and Enter <p/> [QUANTITY]'
+        document.getElementById('message').innerHTML = '[COFFEE] selected <p/> [Clear] and Specify <p/> [QUANTITY]'
         console.log(window.value = 032)
     }
     else if (msg == '033') {
-        document.getElementById('message').innerHTML = '[TEA] selected <p/> [Clear] and Enter <p/> [QUANTITY]'
+        document.getElementById('message').innerHTML = '[TEA] selected <p/> [Clear] and Specify <p/> [QUANTITY]'
         console.log(window.value = 033)
     }
     else if (msg == '034') {
-        document.getElementById('message').innerHTML = '[MILK] selected <p/> [Clear] and Enter <p/> [QUANTITY]'
+        document.getElementById('message').innerHTML = '[MILK] selected <p/> [Clear] and Specify <p/> [QUANTITY]'
         console.log(window.value = 034)
     }
     else {

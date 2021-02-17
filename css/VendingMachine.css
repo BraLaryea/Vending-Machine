@@ -128,7 +128,13 @@ button:hover {
 
 #okbtn {
     text-align: center;
-    background-color: burlywood;
+    background-image: linear-gradient(black,gray);	
+    background-color: black;
+    color: #fff;
+}
+
+#okbtn:hover{
+	background: linear-gradient(black,white);
 }
 
 #quantitybtn {

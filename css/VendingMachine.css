@@ -49,8 +49,17 @@ header {
     border-top: none;
 }
 
+.product:hover {
+    cursor: pointer;
+}
+
 .product img {
     margin-top: 5px;
+    transition: all .3s ease-in-out;
+}
+
+.product img:hover {
+    transform: scale(1.1);
 }
 
 .right {
@@ -109,6 +118,7 @@ button:hover {
     text-align: center;
     border-radius: 20%;
     font-size: 12px;
+    margin-top: 10px;
 }
 
 .okline {
@@ -118,8 +128,7 @@ button:hover {
 
 #okbtn {
     text-align: center;
-    border-radius: 20%;
-    background-color: wheat;
+    background-color: burlywood;
 }
 
 #quantitybtn {
@@ -133,4 +142,5 @@ button:hover {
     height: 60px;
     margin-bottom: 10px;
     background-color: wheat;
+    text-align: center;
 }

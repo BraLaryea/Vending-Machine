@@ -27,51 +27,51 @@
         </div>
         <div class="main">
             <div class="products-display">
-                <div class="product">
+                <div onclick="water()" class="product">
                     <img id="water" src="img/water.png">
                     <br><span>WATER</span>
                 </div>
-                <div class="product">
+                <div onclick="coke()" class="product">
                     <img id="coke" src="img/coke.png">
                     <br><span>COKE</span>
                 </div>
-                <div class="product">
+                <div onclick="fanta()" class="product">
                     <img id="fanta" src="img/fanta.png">
                     <br><span>FANTA</span>
                 </div>
-                <div class="product">
+                <div onclick="sprite()" class="product">
                     <img id="sprite" src="img/sprite.png">
                     <br><span>SPRITE</span>
                 </div>
-                <div class="product">
+                <div onclick="granola()" class="product">
                     <img id="granola" src="img/granola.png">
                     <br><span>GRANOLA</span>
                 </div>
-                <div class="product">
+                <div onclick="chips()" class="product">
                     <img id="chips" src="img/chips.png">
                     <br><span>CHIPS</span>
                 </div>
-                <div class="product">
+                <div onclick="pringles()" class="product">
                     <img id="pringles" src="img/pringles.png">
                     <br><span>PRINGLES</span>
                 </div>
-                <div class="product">
+                <div onclick="doritos()" class="product">
                     <img id="doritos" src="img/doritos.png">
                     <br><span>DORITOS</span>
                 </div>
-                <div class="product">
+                <div onclick="bull()" class="product">
                     <img id="bull" src="img/redbull.png">
                     <br><span>RED BULL</span>
                 </div>
-                <div class="product">
+                <div onclick="coffee()" class="product">
                     <img id="coffee" src="img/coffee.png">
                     <br><span>COFFEE</span>
                 </div>
-                <div class="product">
+                <div onclick="tea()" class="product">
                     <img id="tea" src="img/tea.png">
                     <br><span>TEA</span>
                 </div>
-                <div class="product">
+                <div onclick="milk()" class="product">
                     <img id="milk" src="img/milk.png">
                     <br><span>MILK</span>
                 </div>
@@ -79,9 +79,11 @@
             <div class="right">
                 <div class="screen">
                     <span id="message">
-                        <marquee behavior="scroll" scrollamount="5" direction="left"> Welcome to FS Vendor </marquee>
-                        <p />[CLEAR] and Key-In
-                        <p /> Item Code
+                        <marquee behavior="scroll" scrollamount="5" direction="left"> Welcome to the FS Vendor
+                        </marquee>
+                        Select Item
+                        <br>or
+                        <br>Enter Item [CODE]
                     </span>
                 </div>
                 <div class="keypad">
@@ -103,7 +105,7 @@
                     <div class="keyline">
                         <button onclick="outofscreen()"><img src="img/delete.png"></button>
                         <button value="0" onclick="intoscreen(this)">0</button>
-                        <button onclick="clearscreen()">Clear</button>
+                        <button id="okbtn" onclick="functselector()">OK</button>
                     </div>
                 </div>
 
@@ -112,12 +114,13 @@
                     <button id="quantitybtn" onclick="quantity()">QUANTITY</button>
                     <button id="paybtn" onclick="pay()">CASH</button>
                 </div>
-                <div class="okline">
-                    <button id="okbtn" onclick="functselector()">OK</button>
-                </div>
+                <!-- <div class="okline">
+                    <button onclick="clearscreen()">Clear</button>
+                </div> -->
             </div>
         </div>
         <div id="takeout">
+
         </div>
     </div>
 </body>

@@ -59,7 +59,6 @@ function milk() {
     console.log(window.value = 034)
 }
 
-
 function intoscreen(elem) {
     document.getElementById('message').innerHTML = document.getElementById('message').innerHTML + elem.innerHTML
 }
@@ -124,7 +123,7 @@ function confirmitem() {
     }
     else {
         alert("INVALID Item Code")
-        document.getElementById('message').innerHTML = '!!  Invalid Item Code!! <p/> Please refer to ITEM CODE bar above'
+        document.getElementById('message').innerHTML = '!!  Invalid Item Code!! <p/>  Select Item <br>or <br>Enter [ITEM] Code'
     }
 }
 
@@ -178,6 +177,11 @@ function totalprice() {
     else if (window.value == 034) {
         document.getElementById('message').innerHTML = msg + ' [MILK] bottle(s) = ₵' + 1 * Number(msg) + ' <br>Enter <br> [CASH] to Pay '
         console.log(window.total = 1 * Number(msg))
+    }
+    else {
+        alert('Please select an item first')
+        clearscreen()
+        window.name = 1
     }
 }
 
@@ -316,6 +320,7 @@ function pay() {
 }
 
 function functselector() {
+
     if (window.name == 1) {
         confirmitem()
     }
@@ -325,4 +330,13 @@ function functselector() {
     else if (window.name == 3) {
         changecalc()
     }
+    // else {
+    //     clearscreen()
+    // }
+    // else if (window.value != 011 | 012 | 013 | 014 | 021 | 022 | 023 | 024 | 031 | 032 | 033 | 034) {
+    //     window.name == 2
+    //     functselector()
+    // }
 }
+
+

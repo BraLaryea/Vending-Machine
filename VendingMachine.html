@@ -18,7 +18,8 @@
         <div class="scroller">
             <span>ITEM [CODE]</span>
             <marquee behavior="scroll" direction"left">
-                WATER [011] ₵3.00 --- COKE [012] ₵4.00 --- FANTA [013] ₵4.00 --- SPRITE [014] ₵4.00 --- GRANOLA [021]
+                WATER [011] ₵3.00 --- COKE [012] ₵4.00 --- FANTA [013] ₵4.00 --- SPRITE [014] ₵4.00 --- GRANOLA
+                [021]
                 ₵2.00 --- CHIPS
                 [022] ₵2.00 ---
                 PRINGLES [023] ₵7.00 --- DORITOS [024] ₵6.00 ---
@@ -28,14 +29,17 @@
         <div class="main">
             <div class="products-display">
                 <div onclick="water()" class="product">
+                    <span> WATER [011]</span>
                     <img id="water" src="img/water.png">
-                    <br><span>WATER</span>
+                    <br><span>₵3.00</span>
                 </div>
                 <div onclick="coke()" class="product">
-                    <img id="coke" src="img/coke.png">
-                    <br><span>COKE</span>
+                    <span>COKE</span>
+                    <br><img id="coke" src="img/coke.png">
+                    <br><span>[012] ₵4.00</span>
                 </div>
                 <div onclick="fanta()" class="product">
+                    <span>[013] ₵4.00</span>
                     <img id="fanta" src="img/fanta.png">
                     <br><span>FANTA</span>
                 </div>
@@ -83,7 +87,7 @@
                         </marquee>
                         Select Item
                         <br>or
-                        <br>Enter Item [CODE]
+                        <br>Enter [Item] Code
                     </span>
                 </div>
                 <div class="keypad">

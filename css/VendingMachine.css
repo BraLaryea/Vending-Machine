@@ -1,5 +1,13 @@
+body {
+    background: url("../img/body3.jpg");
+    /* background-repeat: no-repeat; */
+    background-size: contain;
+}
+
 header {
     text-align: center;
+    /* color:  rgb(239, 239, 239); */
+
 }
 
 #wrapper {
@@ -8,7 +16,12 @@ header {
     padding-left: 2%;
     box-sizing: border-box;
     border: solid thin black;
-    background-color: burlywood;
+    background: url("../img/main.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    /* box-shadow: inset 0px 0px 13px 10px rgba(0,0,0,0.75); */
+    /* background-color: rgb(255 157 72); */
 }
 
 .scroller {
@@ -18,7 +31,7 @@ header {
     height: 35px;
     border: solid thin black;
     margin-bottom: 10px;
-    background-color: wheat;
+    background-color: rgb(239, 239, 239);
 }
 
 .main {
@@ -27,6 +40,8 @@ header {
     flex-direction: row;
     justify-content: space-between;
     box-sizing: border-box;
+    background-color: rgb(255 157 72);
+
 }
 
 .products-display {
@@ -37,16 +52,22 @@ header {
     justify-content:space-evenly;
     align-items: center;
     height: 400px;
-    border: solid thin black;
-    background-color: wheat;
+    background-color: rgb(194, 218, 230);
+
 }
 
 .product {
     width: 90px;
     height: 100px;
     text-align: center;
-    border: solid thin black;
+    /* border: solid thin black; */
     border-top: none;
+    backdrop-filter: blur(2px);
+    box-shadow: 0px 3px 4px 1px rgba(0,0,0,0.75);
+    /* color:  rgb(239, 239, 239); */
+    font-size: small;
+    /* padding: 1px; */
+    /* box-sizing: border-box; */
 }
 
 .product:hover {
@@ -55,11 +76,17 @@ header {
 
 .product img {
     margin-top: 5px;
-    transition: all .3s ease-in-out;
+    /* transition: all .3s ease-in-out; */
 }
 
+@keyframes bounce { 
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-5px); }
+}
 .product img:hover {
-    transform: scale(1.1);
+    animation: bounce 0.8s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
 }
 
 .right {
@@ -84,12 +111,11 @@ header {
 
 .keypad {
     margin-top: 5px;
-    height: 50%;
-    border: solid thin black;
+    height: 40%;
     display: flex;
     flex-direction: column;
     justify-content:space-evenly;
-    background-color: wheat;
+    /* background-color: wheat; */
 }
 
 .keyline {
@@ -108,7 +134,7 @@ button:hover {
 }
 
 .functionline {
-    margin-top: 5px;
+    margin-top: 2px;
     display: flex;
     justify-content: space-evenly;
 }
@@ -147,6 +173,6 @@ button:hover {
     width: 69%;
     height: 60px;
     margin-bottom: 10px;
-    background-color: wheat;
+    background-color: rgb(239, 239, 239);
     text-align: center;
 }

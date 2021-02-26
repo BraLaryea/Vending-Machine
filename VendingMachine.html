@@ -116,6 +116,9 @@
                         <button id="okbtn" onclick="functselector()">OK</button>
                     </div>
                 </div>
+                <div class="clearline">
+                    <button id="clearbtn" onclick="clearscreen()">CLE</button>
+                </div>
                 <div class="current">
                     ITEM SELECTED : <span id="itemname"></span>
                     <br> QUANTITY : <span id="quantity"></span>
@@ -123,17 +126,8 @@
                 </div>
             </div>
         </div>
-        <div id="takeout">
-
-        </div>
-        <!-- <div class="functionline">
-                    <button id="itembtn" onclick="item()">ITEM</button>
-                    <button id="quantitybtn" onclick="quantity()">QUANTITY</button>
-                    <button id="paybtn" onclick="pay()">CASH</button>
-                </div> -->
-        <!-- <div class="okline">
-                    <button onclick="clearscreen()">Clear</button>
-                </div> -->
+        <div id="takeout"></div>
+        <button id="receiptbtn" onclick="printreceipt()">Print Receipt</button>
     </div>
 </body>
 

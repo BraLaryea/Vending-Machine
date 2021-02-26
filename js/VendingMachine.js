@@ -1,8 +1,10 @@
 var index = 0
+var pricepaid = 0
+var balance = 0
 const Itemcode = ['011', '012', '013', '014', '021', '022', '023', '024', '031', '032', '033', '034'];
 const Itemname = ['WATER', 'COKE', 'FANTA', 'SPRITE', 'GRANOLA', 'CHIPS', 'PRINGLES', 'DORITOS', 'RED BULL', 'COFFEE', 'TEA', 'MILK'];
 const Unitprice = [3, 4, 4, 4, 2, 2, 7, 6, 4, 3, 3, 1,];
-const Img = ["img/water_out.png", "img/coke_out.png", "img/fanta_out.png", "img/sprite_out.png", "img/granola_out.png", "img/chips_out.png", "img/pringles_out.png", "img/doritos_out.png", "img/bull_out.png", "img/coffee_out.png", "img/tea_out.png", "img/milk_out.png",]
+const Img = ["img/water_out.png", "img/coke_out.png", "img/fanta_out.png", "img/sprite_out.png", "img/granola_out.png", "img/chips_out.png", "img/pringles_out.png", "img/doritos_out.png", "img/redbull_out.png", "img/coffee_out.png", "img/tea_out.png", "img/milk_out.png",]
 
 function clear() {
     document.getElementById("message").innerHTML = "";
@@ -16,10 +18,12 @@ function item(x) {
     clear()
     document.getElementById("cast").style.display = "block";
     document.getElementById("message").style.display = "none";
-    document.getElementById("message").innerHTML = "";
     document.getElementById('cast').innerHTML = '[' + x + '] selected <p/> Specify <p/> [QUANTITY]'
     index = indexwithname(x);
     document.getElementById("itemname").innerHTML = Itemname[index];
+    document.getElementById('takeout').innerHTML = ""
+    balance = 0
+    pricepaid = 0
 }
 
 function intoscreen(elem) {
@@ -99,8 +103,17 @@ function functselector() {
         if (parseInt(totalscreen.innerHTML) == 0) {
             cast.innerHTML = 'No Payment made 😐😑'
         }
+        if (nameslot.innerHTML != 0 && quantity.innerHTML != 0 && totalamount.innerHTML != 0 && pricepaid != 0) {
+            clear()
+            cast.style.display = "block";
+            cast.innerHTML = '<marquee behavior="scroll" scrollamount="5" direction="left"> Welcome to the FS Vendor </marquee> Touch Item <br> or <br> Enter[Item] Code'
+            document.getElementById('takeout').innerHTML = ""
+            balance = 0
+            pricepaid = 0
+        }
         else if (parseInt(totalamount.innerHTML) < parseInt(totalscreen.innerHTML) && parseInt(totalscreen.innerHTML) > 0) {
             cast.innerHTML = 'GH₵' + parseInt(totalscreen.innerHTML - totalamount.innerHTML) + ' has been returned below as your change <br> Thank you!🎉🙏🏽 <br> Come back soon! '
+            balance = parseInt(totalscreen.innerHTML - totalamount.innerHTML)
             takeout()
         }
         else if (parseInt(totalamount.innerHTML) > parseInt(totalscreen.innerHTML)) {
@@ -110,5 +123,20 @@ function functselector() {
             cast.innerHTML = 'Thank you <br> For your purchase! <p/> 🎉🙏🏽'
             takeout()
         }
+        pricepaid = totalscreen.innerHTML
     }
+}
+
+function clearscreen() {
+    clear()
+    document.getElementById("message").style.display = "none";
+    balance = 0
+    pricepaid = 0
+    document.getElementById('takeout').innerHTML = ""
+    document.getElementById("cast").style.display = "block";
+    document.getElementById("cast").innerHTML = '<marquee behavior="scroll" scrollamount="5" direction="left"> Welcome to the FS Vendor </marquee> Touch Item <br> or <br> Enter[Item] Code'
+}
+
+function printreceipt() {
+    document.getElementById('receipt').style.display = "block"
 }

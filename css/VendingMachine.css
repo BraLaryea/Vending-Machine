@@ -153,18 +153,14 @@ button:hover {
     justify-content: space-evenly;
 }
 
-/* .functionline button {
-    width: 45px;
+.clearline {
     text-align: center;
-    border-radius: 20%;
-    font-size: 12px;
-    margin-top: 10px;
-} */
+}
 
-/* .okline {
-    text-align: center;
-    margin-top: 10px;
-} */
+#clearbtn {
+    width: 50px;
+    border-radius: 25%;
+}
 
 #okbtn {
     text-align: center;
@@ -181,16 +177,21 @@ button:hover {
     margin-top: 20px;
     font-size: 12px;
 }
-/* #quantitybtn {
-    width: 75px;
-} */
+
 
 #takeout {
     margin-top: 15px;
     border: solid thin black;
     width: 69%;
     height: 60px;
-    margin-bottom: 10px;
     background-color: rgb(239, 239, 239);
     text-align: center;
+}
+
+#receiptbtn {
+    width: auto;
+    margin: auto;
+    position: relative;
+    top: -48px;
+    left: 485px;
 }

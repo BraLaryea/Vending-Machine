@@ -139,4 +139,16 @@ function clearscreen() {
 
 function printreceipt() {
     document.getElementById('receipt').style.display = "block"
+    document.getElementById('itm').innerHTML = Itemname[index]
+    document.getElementById('cod').innerHTML = Itemcode[index]
+    document.getElementById('qty').innerHTML = document.getElementById("quantity").innerHTML
+    document.getElementById('unitpr').innerHTML = Unitprice[index]
+    document.getElementById('totalpr').innerHTML = document.getElementById("totalamount").innerHTML
+    document.getElementById('paid').innerHTML = pricepaid
+    document.getElementById('bal').innerHTML = balance
+    var imgslot = document.getElementById('imgcontainer')
+    var img2 = document.createElement('img');
+    img2.src = Img[index]
+    imgslot.appendChild(img2)
+
 }

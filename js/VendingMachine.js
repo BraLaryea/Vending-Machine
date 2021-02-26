@@ -5,6 +5,7 @@ const Itemcode = ['011', '012', '013', '014', '021', '022', '023', '024', '031',
 const Itemname = ['WATER', 'COKE', 'FANTA', 'SPRITE', 'GRANOLA', 'CHIPS', 'PRINGLES', 'DORITOS', 'RED BULL', 'COFFEE', 'TEA', 'MILK'];
 const Unitprice = [3, 4, 4, 4, 2, 2, 7, 6, 4, 3, 3, 1,];
 const Img = ["img/water_out.png", "img/coke_out.png", "img/fanta_out.png", "img/sprite_out.png", "img/granola_out.png", "img/chips_out.png", "img/pringles_out.png", "img/doritos_out.png", "img/redbull_out.png", "img/coffee_out.png", "img/tea_out.png", "img/milk_out.png",]
+const Img2 = ["img/water_receipt.png", "img/coke_receipt.png", "img/fanta_receipt.png", "img/sprite_receipt.png", "img/granola_receipt.png", "img/chips_receipt.png", "img/pringles_receipt.png", "img/doritos_receipt.png", "img/redbull_receipt.png", "img/coffee_receipt.png", "img/tea_receipt.png", "img/milk_receipt.png",]
 
 function clear() {
     document.getElementById("message").innerHTML = "";
@@ -148,7 +149,6 @@ function printreceipt() {
     document.getElementById('bal').innerHTML = balance
     var imgslot = document.getElementById('imgcontainer')
     var img2 = document.createElement('img');
-    img2.src = Img[index]
+    img2.src = Img2[index]
     imgslot.appendChild(img2)
-
 }

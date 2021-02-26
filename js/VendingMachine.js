@@ -1,4 +1,3 @@
-
 function water() {
     document.getElementById('message').innerHTML = '[WATER] selected <p/> Specify <p/> [QUANTITY]'
     console.log(window.value = 011)
@@ -60,7 +59,7 @@ function milk() {
 }
 
 function intoscreen(elem) {
-    document.getElementById('message').innerHTML = document.getElementById('message').innerHTML + elem.innerHTML
+    document.getElementById('message').innerHTML += elem.innerHTML
 }
 
 function outofscreen() {

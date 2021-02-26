@@ -105,6 +105,20 @@ header {
     align-items: center;
 }
 
+#cast {
+    text-align: center;
+}
+
+#totalscreen {
+    z-index: 1;
+    position: fixed;
+    display: none;
+    background-color: rgb(239, 239, 239);
+    width: 165px;
+    text-align: center;
+}
+
+
 #message {
     text-align: center;
 }
@@ -139,18 +153,18 @@ button:hover {
     justify-content: space-evenly;
 }
 
-.functionline button {
+/* .functionline button {
     width: 45px;
     text-align: center;
     border-radius: 20%;
     font-size: 12px;
     margin-top: 10px;
-}
+} */
 
-.okline {
+/* .okline {
     text-align: center;
     margin-top: 10px;
-}
+} */
 
 #okbtn {
     text-align: center;
@@ -163,9 +177,13 @@ button:hover {
 	background: linear-gradient(black,white);
 }
 
-#quantitybtn {
-    width: 75px;
+.current {
+    margin-top: 20px;
+    font-size: 12px;
 }
+/* #quantitybtn {
+    width: 75px;
+} */
 
 #takeout {
     margin-top: 15px;

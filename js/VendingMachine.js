@@ -1,4 +1,4 @@
-var index = 0
+var index = ""
 var pricepaid = 0
 var balance = 0
 const Itemcode = ['011', '012', '013', '014', '021', '022', '023', '024', '031', '032', '033', '034'];
@@ -20,11 +20,12 @@ function item(x) {
     document.getElementById("cast").style.display = "block";
     document.getElementById("message").style.display = "none";
     document.getElementById('cast').innerHTML = '[' + x + '] selected <p/> Specify <p/> [QUANTITY]'
-    index = indexwithname(x);
+    index = indexwithtouch(x);
     document.getElementById("itemname").innerHTML = Itemname[index];
     document.getElementById('takeout').innerHTML = ""
     balance = 0
     pricepaid = 0
+    document.getElementById('receiptbtn').style.visibility = "hidden"
 }
 
 function intoscreen(elem) {
@@ -47,8 +48,8 @@ function indexwithcode(code) {
     }
 }
 
-function indexwithname(name) {
-    for (let i = 0; index < Itemname.length; i++) {
+function indexwithtouch(name) {
+    for (let i = 0; i < Itemname.length; i++) {
         if (name == Itemname[i]) {
             return i
         }
@@ -111,11 +112,13 @@ function functselector() {
             document.getElementById('takeout').innerHTML = ""
             balance = 0
             pricepaid = 0
+            document.getElementById('receiptbtn').style.visibility = "hidden"
         }
         else if (parseInt(totalamount.innerHTML) < parseInt(totalscreen.innerHTML) && parseInt(totalscreen.innerHTML) > 0) {
             cast.innerHTML = 'GH₵' + parseInt(totalscreen.innerHTML - totalamount.innerHTML) + ' has been returned below as your change <br> Thank you!🎉🙏🏽 <br> Come back soon! '
             balance = parseInt(totalscreen.innerHTML - totalamount.innerHTML)
             takeout()
+            document.getElementById('receiptbtn').style.visibility = "visible"
         }
         else if (parseInt(totalamount.innerHTML) > parseInt(totalscreen.innerHTML)) {
             cast.innerHTML = 'You did not pay enough 😶⚠️<P/>  GH₵' + parseInt(totalscreen.innerHTML) + ' has been returned'
@@ -123,6 +126,7 @@ function functselector() {
         else if (parseInt(totalamount.innerHTML) = parseInt(totalscreen.innerHTML)) {
             cast.innerHTML = 'Thank you <br> For your purchase! <p/> 🎉🙏🏽'
             takeout()
+            document.getElementById('receiptbtn').style.visibility = "visible"
         }
         pricepaid = totalscreen.innerHTML
     }
@@ -135,7 +139,13 @@ function clearscreen() {
     pricepaid = 0
     document.getElementById('takeout').innerHTML = ""
     document.getElementById("cast").style.display = "block";
-    document.getElementById("cast").innerHTML = '<marquee behavior="scroll" scrollamount="5" direction="left"> Welcome to the FS Vendor </marquee> Touch Item <br> or <br> Enter[Item] Code'
+    document.getElementById("cast").innerHTML = '<marquee behavior="scroll" scrollamount="5" direction="left"> Welcome to the FS Vendor </marquee> Touch Item <br> or <br> Enter [Item] Code'
+    document.getElementById('receiptbtn').style.visibility = "hidden"
+    index = ""
+}
+
+function Random(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function printreceipt() {
@@ -147,8 +157,21 @@ function printreceipt() {
     document.getElementById('totalpr').innerHTML = document.getElementById("totalamount").innerHTML
     document.getElementById('paid').innerHTML = pricepaid
     document.getElementById('bal').innerHTML = balance
-    var imgslot = document.getElementById('imgcontainer')
-    var img2 = document.createElement('img');
-    img2.src = Img2[index]
-    imgslot.appendChild(img2)
+    document.getElementById('image').src = Img2[index]
+    document.getElementById('num').innerHTML = Random(1, 1000000)
+}
+
+function closereceipt() {
+    document.getElementById('receipt').style.display = "none"
+}
+
+function printing(divName) {
+    var printContents = document.getElementsByClassName(divName)[0].innerHTML;
+    var originalContents = document.body.innerHTML;
+    document.body.innerHTML = printContents;
+    document.body.style.textAlign = "center"
+    document.body.style.paddingTop = "50%"
+    window.print();
+    document.body.innerHTML = originalContents;
+    document.body.style.paddingTop = ""
 }

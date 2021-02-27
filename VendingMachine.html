@@ -13,17 +13,26 @@
 <body>
     <div id="receipt">
         <div class="receipt">
-            <div id="imgcontainer">
-
+            <div class="receiptheader">
+                <span>RECEIPT</span>
+                <button class="closebtn" onclick="closereceipt()">x</button>
             </div>
-            <div class="details">
-                ITEM NAME : <span id="itm"></span>
-                <br>ITEM CODE : <span id="cod"></span>
-                <br>QUANTITY : <span id="qty"></span>
-                <br>UNIT PRICE : <span id="unitpr"></span>
-                <br>TOTAL PRICE : <span id="totalpr"></span>
-                <br>AMOUNT PAID : <span id="paid"></span>
-                <br>BALANCE : <span id="bal"></span>
+            <div class="receiptcontent">
+                <div id="imgcontainer">
+                    <img id="image" src="img/water_receipt.png">
+                </div>
+                <div class="details">
+                    ITEM : <span id="itm"></span> [<span id="cod"></span>]
+                    <br>UNIT PRICE : GH₵<span id="unitpr"></span>.00
+                    <br>QUANTITY : <span id="qty"></span>
+                    <br>TOTAL PRICE : GH₵<span id="totalpr"></span>.00
+                    <br>AMOUNT PAID : GH₵<span id="paid"></span>.00
+                    <br>BALANCE : GH₵<span id="bal"></span>.00
+                    <div style="text-align: center; margin-top: 60px;"> Receipt Nó : #<span id="num"></span></div>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <button onclick="printing('receipt')" id="printbtn" style="margin-top: 3px; width: auto;">PRINT</button>
             </div>
         </div>
     </div>
@@ -34,66 +43,75 @@
         <div class="scroller">
             <span>ITEM [CODE]</span>
             <marquee behavior="scroll" direction"left">
-                WATER [011] ₵3.00 --- COKE [012] ₵4.00 --- FANTA [013] ₵4.00 --- SPRITE [014] ₵4.00 --- GRANOLA
+                WATER [011] GH₵3.00 --- COKE [012] GH₵4.00 --- FANTA [013] GH₵4.00 --- SPRITE [014] GH₵4.00 --- GRANOLA
                 [021]
-                ₵2.00 --- CHIPS
-                [022] ₵2.00 ---
-                PRINGLES [023] ₵7.00 --- DORITOS [024] ₵6.00 ---
-                RED BULL [031] ₵4.00 --- COFFEE [032] ₵3.00 --- TEA [033] ₵3.00 --- MILK [034] ₵1.00
+                GH2.00 --- CHIPS
+                [022] GH₵2.00 ---
+                PRINGLES [023] GH₵7.00 --- DORITOS [024] GH₵6.00 ---
+                RED BULL [031] GH₵4.00 --- COFFEE [032] GH₵3.00 --- TEA [033] GH₵3.00 --- MILK [034] GH₵1.00
             </marquee>
         </div>
         <div class="main">
             <div class="products-display">
                 <div class="product">
-                    <span> WATER [011]</span>
-                    <img id="water" onclick="item('WATER')" src="img/water.png">
-                    <br><span>₵3.00</span>
+                    <span>WATER</span>
+                    <br><img id="water" onclick="item('WATER')" src="img/water.png">
+                    <br><span>GH₵3.00 [011]</span>
                 </div>
                 <div onclick="item('COKE')" class="product">
                     <span>COKE</span>
                     <br><img id="coke" src="img/coke.png">
-                    <br><span>[012] ₵4.00</span>
+                    <br><span>GH₵4.00 [012]</span>
                 </div>
                 <div onclick="item('FANTA')" class="product">
-                    <span>[013] ₵4.00</span>
-                    <img id="fanta" src="img/fanta.png">
-                    <br><span>FANTA</span>
+                    <span>FANTA</span>
+                    <br><img id="fanta" src="img/fanta.png">
+                    <br><span>GH₵4.00 [013]</span>
                 </div>
                 <div onclick="item('SPRITE')" class="product">
-                    <img id="sprite" src="img/sprite.png">
-                    <br><span>SPRITE</span>
+                    <span>SPRITE</span>
+                    <br><img id="sprite" src="img/sprite.png">
+                    <br><span>GH₵4.00 [014]</span>
                 </div>
                 <div onclick="item('GRANOLA')" class="product">
-                    <img id="granola" src="img/granola.png">
-                    <br><span>GRANOLA</span>
+                    <span>GRANOLA</span>
+                    <br><img id="granola" src="img/granola.png">
+                    <br><span>GH₵4.00 [021]</span>
                 </div>
                 <div onclick="item('CHIPS')" class="product">
-                    <img id="chips" src="img/chips.png">
-                    <br><span>CHIPS</span>
+                    <span>CHIPS</span>
+                    <br><img id="chips" src="img/chips.png">
+                    <br><span>GH₵4.00 [022]</span>
                 </div>
                 <div onclick="item('PRINGLES')" class="product">
-                    <img id="pringles" src="img/pringles.png">
-                    <br><span>PRINGLES</span>
+                    <span>PRINGLES</span>
+                    <br><img id="pringles" src="img/pringles.png">
+                    <br><span>GH₵4.00 [023]</span>
                 </div>
                 <div onclick="item('DORITOS')" class="product">
-                    <img id="doritos" src="img/doritos.png">
-                    <br><span>DORITOS</span>
+                    <span>DORITOS</span>
+                    <br><img id="doritos" src="img/doritos.png">
+                    <br><span>GH₵4.00 [024]</span>
                 </div>
                 <div onclick="item('RED BULL')" class="product">
-                    <img id="bull" src="img/redbull.png">
-                    <br><span>RED BULL</span>
+                    <span>RED BULL</span>
+                    <br><img id="bull" src="img/redbull.png">
+                    <br><span>GH₵4.00 [031]</span>
                 </div>
                 <div onclick="item('COFFEE')" class="product">
-                    <img id="coffee" src="img/coffee.png">
-                    <br><span>COFFEE</span>
+                    <span>COFFEE</span>
+                    <br><img id="coffee" src="img/coffee.png">
+                    <br><span>GH₵4.00 [032]</span>
                 </div>
                 <div onclick="item('TEA')" class="product">
-                    <img id="tea" src="img/tea.png">
-                    <br><span>TEA</span>
+                    <span>TEA</span>
+                    <br><img id="tea" src="img/tea.png">
+                    <br><span>GH₵4.00 [033]</span>
                 </div>
                 <div onclick="item('MILK')" class="product">
-                    <img id="milk" src="img/milk.png">
-                    <br><span>MILK</span>
+                    <span>MILK</span>
+                    <br><img id="milk" src="img/milk.png">
+                    <br><span>GH₵4.00 [034]</span>
                 </div>
             </div>
             <div class="right">

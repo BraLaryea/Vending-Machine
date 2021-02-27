@@ -41,7 +41,6 @@ header {
     justify-content: space-between;
     box-sizing: border-box;
     background-color: rgb(255 157 72);
-
 }
 
 .products-display {
@@ -189,6 +188,7 @@ button:hover {
 }
 
 #receiptbtn {
+    visibility: hidden;
     width: auto;
     margin: auto;
     position: relative;
@@ -208,23 +208,64 @@ button:hover {
 }
 
 .receipt {
-    display: flex;
-    flex-direction: column;
     margin: auto;
     background-color: wheat;
-    display: flex;
-    width: 50%;
-    height: 300px;
+    width: 25%;
+    height: 40%;
     position: relative;
-    top: 40%;
+    top: 30%;
+    border-radius: 25px;
 }
 
+.receiptheader {
+    width: 100%;
+    background-color: red;
+}
+
+.receiptheader span{
+    position: relative;
+    /* top: 13px; */
+    left: 5px;
+}
+
+.closebtn {
+    color: white;
+    border: none;
+    font-size: 10px;
+    height: 15px;
+    background-color: black;
+    float: right;
+    width: 20px;
+}
+
+.receiptheader span {
+
+}
+
+.receiptcontent {
+    display: flex;
+    flex-direction: row;
+    background-color: blue;
+    height: 80%;
+    padding-top: 20px;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
 
 #imgcontainer {
     background-color: teal;
+    width: 40%;
+    text-align: center;
 
 }
 
 .details {
+    width: 60%;
     background-color: thistle;
+    height: 100%;
+}
+
+.details span {
+    margin-bottom: 100px;
 }

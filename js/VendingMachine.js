@@ -123,7 +123,7 @@ function functselector() {
         else if (parseInt(totalamount.innerHTML) > parseInt(totalscreen.innerHTML)) {
             cast.innerHTML = 'You did not pay enough 😶⚠️<P/>  GH₵' + parseInt(totalscreen.innerHTML) + ' has been returned'
         }
-        else if (parseInt(totalamount.innerHTML) = parseInt(totalscreen.innerHTML)) {
+        else if (parseInt(totalamount.innerHTML) == parseInt(totalscreen.innerHTML)) {
             cast.innerHTML = 'Thank you <br> For your purchase! <p/> 🎉🙏🏽'
             takeout()
             document.getElementById('receiptbtn').style.visibility = "visible"

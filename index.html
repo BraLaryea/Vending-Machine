@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSVendor</title>
+    <script src="js/VendingMachine.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/VendingMachine.css">
+</head>
+
+<body>
+    <div id="receipt">
+        <div class="receipt">
+            <div class="receiptheader">
+                <span>RECEIPT</span>
+                <button class="closebtn" onclick="closereceipt()">x</button>
+            </div>
+            <div class="receiptcontent">
+                <div id="imgcontainer">
+                    <img id="image" src="img/water_receipt.png">
+                </div>
+                <div class="details">
+                    ITEM : <span id="itm"></span> [<span id="cod"></span>]
+                    <br>UNIT PRICE : GH₵<span id="unitpr"></span>.00
+                    <br>QUANTITY : <span id="qty"></span>
+                    <br>TOTAL PRICE : GH₵<span id="totalpr"></span>.00
+                    <br>AMOUNT PAID : GH₵<span id="paid"></span>.00
+                    <br>BALANCE : GH₵<span id="bal"></span>.00
+                    <div style="text-align: center; margin-top: 60px;"> Receipt Nó : #<span id="num"></span></div>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <button onclick="printing('receipt')" id="printbtn" style="margin-top: 3px; width: auto;">PRINT</button>
+            </div>
+        </div>
+    </div>
+    <header>
+        <h1>FULLSTACK VENDING MACHINE</h1>
+    </header>
+    <div id="wrapper">
+        <div class="scroller">
+            <span>ITEM [CODE]</span>
+            <marquee behavior="scroll" direction"left">
+                WATER [011] GH₵3.00 --- COKE [012] GH₵4.00 --- FANTA [013] GH₵4.00 --- SPRITE [014] GH₵4.00 --- GRANOLA
+                [021]
+                GH2.00 --- CHIPS
+                [022] GH₵2.00 ---
+                PRINGLES [023] GH₵7.00 --- DORITOS [024] GH₵6.00 ---
+                RED BULL [031] GH₵4.00 --- COFFEE [032] GH₵3.00 --- TEA [033] GH₵3.00 --- MILK [034] GH₵1.00
+            </marquee>
+        </div>
+        <div class="main">
+            <div class="products-display">
+                <div class="product" onclick="item('WATER')">
+                    <span>WATER</span>
+                    <br><img id="water" src="img/water.png">
+                    <br><span>GH₵3.00 [011]</span>
+                </div>
+                <div onclick="item('COKE')" class="product">
+                    <span>COKE</span>
+                    <br><img id="coke" src="img/coke.png">
+                    <br><span>GH₵4.00 [012]</span>
+                </div>
+                <div onclick="item('FANTA')" class="product">
+                    <span>FANTA</span>
+                    <br><img id="fanta" src="img/fanta.png">
+                    <br><span>GH₵4.00 [013]</span>
+                </div>
+                <div onclick="item('SPRITE')" class="product">
+                    <span>SPRITE</span>
+                    <br><img id="sprite" src="img/sprite.png">
+                    <br><span>GH₵4.00 [014]</span>
+                </div>
+                <div onclick="item('GRANOLA')" class="product">
+                    <span>GRANOLA</span>
+                    <br><img id="granola" src="img/granola.png">
+                    <br><span>GH₵4.00 [021]</span>
+                </div>
+                <div onclick="item('CHIPS')" class="product">
+                    <span>CHIPS</span>
+                    <br><img id="chips" src="img/chips.png">
+                    <br><span>GH₵4.00 [022]</span>
+                </div>
+                <div onclick="item('PRINGLES')" class="product">
+                    <span>PRINGLES</span>
+                    <br><img id="pringles" src="img/pringles.png">
+                    <br><span>GH₵4.00 [023]</span>
+                </div>
+                <div onclick="item('DORITOS')" class="product">
+                    <span>DORITOS</span>
+                    <br><img id="doritos" src="img/doritos.png">
+                    <br><span>GH₵4.00 [024]</span>
+                </div>
+                <div onclick="item('RED BULL')" class="product">
+                    <span>RED BULL</span>
+                    <br><img id="bull" src="img/redbull.png">
+                    <br><span>GH₵4.00 [031]</span>
+                </div>
+                <div onclick="item('COFFEE')" class="product">
+                    <span>COFFEE</span>
+                    <br><img id="coffee" src="img/coffee.png">
+                    <br><span>GH₵4.00 [032]</span>
+                </div>
+                <div onclick="item('TEA')" class="product">
+                    <span>TEA</span>
+                    <br><img id="tea" src="img/tea.png">
+                    <br><span>GH₵4.00 [033]</span>
+                </div>
+                <div onclick="item('MILK')" class="product">
+                    <span>MILK</span>
+                    <br><img id="milk" src="img/milk.png">
+                    <br><span>GH₵4.00 [034]</span>
+                </div>
+            </div>
+            <div class="right">
+                <div class="screen">
+                    <span id="cast">
+                        <marquee behavior="scroll" scrollamount="5" direction="left"> Welcome to the FS Vendor
+                        </marquee>
+                        Touch Item
+                        <br>or
+                        <br>Enter [Item] Code
+                    </span>
+                    <span id="message">
+                    </span>
+                    <span id="totalscreen">
+                    </span>
+                </div>
+                <div class="keypad">
+                    <div class="keyline">
+                        <button value='1' onclick="intoscreen(this)">1</button>
+                        <button value="2" onclick="intoscreen(this)">2</button>
+                        <button value="3" onclick="intoscreen(this)">3</button>
+                    </div>
+                    <div class="keyline">
+                        <button value="4" onclick="intoscreen(this)">4</button>
+                        <button value="5" onclick="intoscreen(this)">5</button>
+                        <button value="6" onclick="intoscreen(this)">6</button>
+                    </div>
+                    <div class="keyline">
+                        <button value="7" onclick="intoscreen(this)">7</button>
+                        <button value="8" onclick="intoscreen(this)">8</button>
+                        <button value="9" onclick="intoscreen(this)">9</button>
+                    </div>
+                    <div class="keyline">
+                        <button onclick="outofscreen()"><img src="img/delete.png"></button>
+                        <button value="0" onclick="intoscreen(this)">0</button>
+                        <button id="okbtn" onclick="functselector()">OK</button>
+                    </div>
+                </div>
+                <div class="clearline">
+                    <button id="clearbtn" onclick="clearscreen()">CLE</button>
+                </div>
+                <div class="current">
+                    ITEM SELECTED : <span id="itemname"></span>
+                    <br> QUANTITY : <span id="quantity"></span>
+                    <br> TOTAL AMOUNT : GH₵<span id="totalamount"></span>.00
+                </div>
+            </div>
+        </div>
+        <div id="takeout"></div>
+        <button id="receiptbtn" onclick="printreceipt()">Print Receipt</button>
+    </div>
+</body>
+
+</html>
